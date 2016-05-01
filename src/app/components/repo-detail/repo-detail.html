@@ -1,3 +1,13 @@
-<h2>{{ repoDetails.full_name }}</h2>
-
-<pre>this.repoDetails = {{ repoDetails | json }}</pre>
+<div *ngIf="repoDetails.id">
+  <h2>{{ repoDetails.full_name }}</h2>
+  <a [attr.href]="repoDetails.html_url"><img [attr.src]="repoDetails.owner?.avatar_url" alt=""></a>
+  <p>{{repoDetails.description}}</p>
+  <dl>
+    <dt>Stargazers:</dt>
+    <dd>{{repoDetails.stargazers_count}}</dd>
+    <dt>Watchers:</dt>
+    <dd>{{repoDetails.watchers_count}}</dd>
+    <dt>Forks:</dt>
+    <dd>{{repoDetails.forks_count}}</dd>
+  </dl>
+</div>

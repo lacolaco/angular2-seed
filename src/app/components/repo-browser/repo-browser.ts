@@ -1,32 +1,30 @@
-import {Component} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from "angular2/core";
+import {Router, Routes, ROUTER_DIRECTIVES} from "angular2/alt_router";
 
-import {RepoList} from '../repo-list/repo-list';
-import {RepoDetail} from '../repo-detail/repo-detail';
-import {Github} from '../../services/github';
+import {RepoListComponent} from "../repo-list/repo-list";
+import {GitHub} from "../../services/github";
 
 @Component({
-  selector: 'repo-browser',
-  templateUrl: 'app/components/repo-browser/repo-browser.html',
-  styleUrls: ['app/components/repo-browser/repo-browser.css'],
-  providers: [ Github ],
-  directives: [ ROUTER_DIRECTIVES ],
+  selector: "repo-browser",
+  templateUrl: "app/components/repo-browser/repo-browser.html",
+  styleUrls: ["app/components/repo-browser/repo-browser.css"],
+  providers: [GitHub],
+  directives: [ROUTER_DIRECTIVES],
   pipes: []
 })
-@RouteConfig([
-	{path: '/:org',       component: RepoList,   name: 'RepoList'},
-	{path: '/:org/:name', component: RepoDetail, name: 'RepoDetail' },
+@Routes([
+  {path: "/:org", component: RepoListComponent},
 ])
-export class RepoBrowser {
+export class RepoBrowserComponent {
 
-  constructor(private router:Router, private github: Github) {}
+  constructor(private router: Router, private github: GitHub) {
+  }
 
-  searchForOrg(orgName: string){
+  searchForOrg(orgName: string) {
     this.github.getOrg(orgName)
       .subscribe(({name}) => {
         console.log(name);
-        this.router.navigate(['RepoList', {org: orgName}])
-      })
+        this.router.navigateByUrl(`/repo/${orgName}`);
+      });
   }
-
 }

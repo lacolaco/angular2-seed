@@ -1,14 +1,15 @@
 // Vendors
 
 // Angular 2
-import 'angular2/platform/browser';
-import 'angular2/core';
-import 'angular2/http';
-import 'angular2/router';
+import "angular2/platform/browser";
+import "angular2/core";
+import "angular2/http";
+import "angular2/alt_router";
 
 
 // RxJS 5
 // import 'rxjs/Rx';
+import "rxjs/add/operator/catch";
 
 
 // For vendors for example jQuery, Lodash, angular2-jwt import them here

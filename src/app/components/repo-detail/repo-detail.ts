@@ -1,26 +1,31 @@
-import {Component} from 'angular2/core';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Http} from 'angular2/http';
-import {Github} from '../../services/github';
+import {Component} from "angular2/core";
+import {RouteSegment, ROUTER_DIRECTIVES, OnActivate, Tree} from "angular2/alt_router";
+import {GitHub} from "../../services/github";
 
 @Component({
-  selector: 'repo-detail',
-  templateUrl: 'app/components/repo-detail/repo-detail.html',
-  styleUrls: ['app/components/repo-detail/repo-detail.css'],
+  selector: "repo-detail",
+  templateUrl: "app/components/repo-detail/repo-detail.html",
+  styleUrls: ["app/components/repo-detail/repo-detail.css"],
   providers: [],
-  directives: [ ROUTER_DIRECTIVES ],
+  directives: [ROUTER_DIRECTIVES],
   pipes: []
 })
-export class RepoDetail {
+export class RepoDetailComponent implements OnActivate {
   repoDetails = {};
-  constructor(public routeParams:RouteParams, public github: Github) {}
 
-  ngOnInit() {
-    this.github.getRepoForOrg(this.routeParams.get('org'), this.routeParams.get('name'))
-      .subscribe(repoDetails => {
-        this.repoDetails = repoDetails;
-      });
+  constructor(public github: GitHub) {
+  }
 
+  routerOnActivate(curr: RouteSegment, prev: any, currTree: Tree<RouteSegment>) {
+    let orgSegment = currTree.parent(curr);
+    this.github.getRepoForOrg(orgSegment.getParam("org"), curr.getParam("name"))
+      .subscribe(
+        repoDetails => {
+          this.repoDetails = repoDetails;
+        },
+        error => {
+          console.error(error);
+        });
   }
 
 }

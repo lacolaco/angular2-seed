@@ -19,6 +19,9 @@ var webpackConfig = {
   ],
 
   module: {
+    preLoaders:[
+      { test: /\.ts$/, loader: 'tslint-loader' },
+    ],
     loaders: [
       // .ts files for TypeScript
       { test: /\.ts$/, loader: 'awesome-typescript-loader' },

@@ -2,6 +2,8 @@ import {Injectable} from "angular2/core";
 import {Http, URLSearchParams} from "angular2/http";
 import "rxjs/add/operator/map";
 
+export const GITHUB_API_BASE_URL = "https://api.github.com";
+
 @Injectable()
 export class GitHub {
   constructor(private http: Http) {
@@ -23,7 +25,7 @@ export class GitHub {
     let params = new URLSearchParams();
     params.set("per_page", "100");
 
-    let url = `https://api.github.com/${ path }`;
+    let url = `${GITHUB_API_BASE_URL}/${path}`;
     return this.http.get(url, {search: params})
       .map((res) => res.json());
   }

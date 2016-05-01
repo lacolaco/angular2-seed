@@ -8,6 +8,7 @@ var webpackConfig = {
     'polyfills': './src/polyfills.ts',
     'vendor':    './src/vendor.ts',
     'app':       './src/app.ts',
+    'test':      './src/app.spec.ts',
   },
 
   output: {
@@ -15,7 +16,6 @@ var webpackConfig = {
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
   ],
 
   module: {
@@ -25,6 +25,7 @@ var webpackConfig = {
     loaders: [
       // .ts files for TypeScript
       { test: /\.ts$/, loader: 'awesome-typescript-loader' },
+      { test: /\.html$/, loader: 'html-loader' },
 
     ]
   }
@@ -54,7 +55,7 @@ var defaultConfig = {
   debug: true,
   output: {
     filename: '[name].bundle.js',
-    sourceMapFilename: '[name].map',
+    sourceMapFilename: '[name].js.map',
     chunkFilename: '[id].chunk.js'
   },
 
@@ -78,7 +79,7 @@ var defaultConfig = {
 
   resolve: {
     root: [ path.join(__dirname, 'src') ],
-    extensions: ['', '.ts', '.js']
+    extensions: ['', '.ts', '.js', '.html', '.css']
   },
 
   devServer: {

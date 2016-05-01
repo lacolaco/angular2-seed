@@ -16,6 +16,13 @@ var webpackConfig = {
   },
 
   plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      test: /(app|vendor|polyfill)\.bundle\.js$/,
+      mangle: false,
+      compress: {
+        warnings: false
+      }
+    })
   ],
 
   module: {
@@ -84,7 +91,8 @@ var defaultConfig = {
 
   devServer: {
     historyApiFallback: true,
-    watchOptions: { aggregateTimeout: 300, poll: 1000 }
+    watchOptions: { aggregateTimeout: 300, poll: 1000 },
+    compress: true
   },
 
   node: {

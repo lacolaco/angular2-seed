@@ -6,7 +6,6 @@ var path = require('path');
 var webpackConfig = {
   entry: {
     'polyfills': './src/polyfills.ts',
-    'vendor':    './src/vendor.ts',
     'app':       './src/app.ts',
     'test':      './src/app.spec.ts',
   },
@@ -17,7 +16,6 @@ var webpackConfig = {
 
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
-      test: /(app|vendor|polyfill)\.bundle\.js$/,
       mangle: false,
       compress: {
         warnings: false
@@ -63,7 +61,6 @@ var defaultConfig = {
   output: {
     filename: '[name].bundle.js',
     sourceMapFilename: '[name].js.map',
-    chunkFilename: '[id].chunk.js'
   },
 
   module: {

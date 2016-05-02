@@ -1,3 +1,7 @@
+// Vendors
+// import 'rxjs/Rx';
+import "rxjs/add/operator/catch";
+
 import {LocationStrategy, HashLocationStrategy} from "angular2/platform/common";
 import {bootstrap} from "angular2/platform/browser";
 import {provide} from "angular2/core";

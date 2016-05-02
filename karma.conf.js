@@ -16,7 +16,6 @@ module.exports = function (config) {
     // list of files / patterns to load in the browser
     files: [
       '../dist/polyfills.bundle.js',
-      '../dist/vendor.bundle.js',
       '../dist/test.bundle.js',
       {pattern: '../dist/**/*.js.map', included: false, watched: false},
       {pattern: '**/*.html', included: false, served: true, watched: false},

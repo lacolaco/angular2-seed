@@ -37,7 +37,7 @@
     "webpack-merge": "^0.8.4"
   },
   "dependencies": {
-    "angular2": "github:angular/angular#2.0.0-build.f5f0038.js",
+    "angular2": "github:angular/angular#2.0.0-build.4fe0f1f.js",
     "core-js": "^2.2.0",
     "rxjs": "5.0.0-beta.6",
     "zone.js": "~0.6.12"

@@ -18,7 +18,7 @@ module.exports = function (config) {
       '../dist/polyfills.bundle.js',
       '../dist/test.bundle.js',
       {pattern: '../dist/**/*.js.map', included: false, watched: false},
-      {pattern: '**/*.html', included: false, served: true, watched: false},
+      // {pattern: '**/*.html', included: false, served: true, watched: false},
       {pattern: '**/*.css', included: false, watched: false},
     ],
 

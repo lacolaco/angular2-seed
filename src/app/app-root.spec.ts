@@ -2,7 +2,7 @@ import {assert} from "../test_util";
 import {inject, async, TestComponentBuilder} from "angular2-testing-lite/core";
 import {beforeEach, beforeEachProviders, it} from "angular2-testing-lite/mocha";
 import {AppRootComponent} from "./app-root";
-import {ROUTER_FAKE_PROVIDERS} from "angular2/src/alt_router/router_testing_providers";
+import {ROUTER_FAKE_PROVIDERS} from "@angular/router/testing";
 
 describe("AppRootComponent", () => {
 

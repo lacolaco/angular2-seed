@@ -13,8 +13,5 @@
     "typings/main.d.ts",
     "typings/main",
     "node_modules"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "atom": { "rewriteTsconfig": false }
+  ]
 }

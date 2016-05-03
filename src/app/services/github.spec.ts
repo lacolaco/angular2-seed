@@ -2,11 +2,10 @@ import {assert} from "../../test_util";
 import {inject, async, TestComponentBuilder} from "angular2-testing-lite/core";
 import {beforeEach, beforeEachProviders, it} from "angular2-testing-lite/mocha";
 import {GitHub, GITHUB_API_BASE_URL} from "./github";
-import {MockBackend} from "angular2/http/testing";
-import {BaseRequestOptions, Http, Response, ResponseOptions} from "angular2/http";
-import {provide} from "angular2/core";
+import {MockBackend, MockConnection} from "@angular/http/testing";
+import {BaseRequestOptions, Http, Response, ResponseOptions} from "@angular/http";
+import {provide} from "@angular/core";
 import {Observable} from "rxjs/Observable";
-import {MockConnection} from "angular2/src/http/backends/mock_backend";
 
 describe("HomeComponent", () => {
 

@@ -2,8 +2,8 @@ import {assert} from "../../../test_util";
 import {inject, async, TestComponentBuilder} from "angular2-testing-lite/core";
 import {beforeEach, beforeEachProviders, it} from "angular2-testing-lite/mocha";
 import {RepoDetailComponent} from "./repo-detail";
-import {provide} from "angular2/core";
-import {By} from "angular2/platform/browser";
+import {provide} from "@angular/core";
+import {By} from "@angular/platform-browser";
 import {GitHub} from "../../services/github";
 
 class MockGitHub {

@@ -2,9 +2,9 @@ import {assert} from "../../../test_util";
 import {inject, async, TestComponentBuilder} from "angular2-testing-lite/core";
 import {beforeEach, beforeEachProviders, it} from "angular2-testing-lite/mocha";
 import {AboutComponent} from "./about";
-import {MockBackend} from "angular2/http/testing";
-import {BaseRequestOptions, Http} from "angular2/http";
-import {provide} from "angular2/core";
+import {MockBackend} from "@angular/http/testing";
+import {BaseRequestOptions, Http} from "@angular/http";
+import {provide} from "@angular/core";
 
 describe("AboutComponent", () => {
 

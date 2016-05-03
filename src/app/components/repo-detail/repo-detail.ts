@@ -1,5 +1,5 @@
-import {Component} from "angular2/core";
-import {RouteSegment, ROUTER_DIRECTIVES, OnActivate, Tree} from "angular2/alt_router";
+import {Component} from "@angular/core";
+import {RouteSegment, ROUTER_DIRECTIVES, OnActivate, Tree} from "@angular/router";
 import {GitHub} from "../../services/github";
 
 @Component({

@@ -4,10 +4,11 @@ import "rxjs/add/operator/toPromise";
 import {assert} from "./test_util";
 import {describe, it} from "angular2-testing-lite/mocha";
 import {resetBaseTestProviders, setBaseTestProviders} from "angular2-testing-lite/core";
-import {TEST_BROWSER_APPLICATION_PROVIDERS, TEST_BROWSER_PLATFORM_PROVIDERS} from "angular2/platform/testing/browser";
+import {TEST_BROWSER_STATIC_PLATFORM_PROVIDERS, ADDITIONAL_TEST_BROWSER_PROVIDERS} from "@angular/platform-browser/testing/browser_static";
+import {BROWSER_APP_DYNAMIC_PROVIDERS} from "@angular/platform-browser-dynamic";
 
 resetBaseTestProviders();
-setBaseTestProviders(TEST_BROWSER_PLATFORM_PROVIDERS, TEST_BROWSER_APPLICATION_PROVIDERS);
+setBaseTestProviders(TEST_BROWSER_STATIC_PLATFORM_PROVIDERS, [BROWSER_APP_DYNAMIC_PROVIDERS, ADDITIONAL_TEST_BROWSER_PROVIDERS]);
 
 describe("dummy", () => {
   it("dummy", () => {

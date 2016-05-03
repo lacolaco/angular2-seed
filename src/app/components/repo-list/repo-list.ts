@@ -1,6 +1,6 @@
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 import {GitHub} from "../../services/github";
-import {OnActivate, ROUTER_DIRECTIVES, RouteSegment, Routes} from "angular2/alt_router";
+import {OnActivate, ROUTER_DIRECTIVES, RouteSegment, Routes} from "@angular/router";
 import {RepoDetailComponent} from "../repo-detail/repo-detail";
 
 @Component({

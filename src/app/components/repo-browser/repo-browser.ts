@@ -1,5 +1,5 @@
-import {Component} from "angular2/core";
-import {Router, Routes, ROUTER_DIRECTIVES} from "angular2/alt_router";
+import {Component} from "@angular/core";
+import {Router, Routes, ROUTER_DIRECTIVES} from "@angular/router";
 
 import {RepoListComponent} from "../repo-list/repo-list";
 import {GitHub} from "../../services/github";
